@@ -142,7 +142,7 @@ GEM
       tzinfo
       unicode (>= 0.4.4.5)
     css-zero (1.1.15)
-    csv (3.3.4)
+    csv (3.3.5)
     data_migrate (11.3.1)
       activerecord (>= 6.1)
       railties (>= 6.1)
@@ -211,7 +211,7 @@ GEM
       zeitwerk (~> 2.5)
     hashdiff (1.2.1)
     hashie (5.0.0)
-    httparty (0.23.1)
+    httparty (0.24.0)
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -277,7 +277,7 @@ GEM
       prism (~> 1.5)
     msgpack (1.7.3)
     multi_json (1.15.0)
-    multi_xml (0.8.0)
+    multi_xml (0.8.1)
       bigdecimal (>= 3.1, < 5)
     net-http (0.6.0)
       uri
