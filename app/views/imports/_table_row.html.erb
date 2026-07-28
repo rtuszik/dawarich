@@ -18,7 +18,7 @@
       </div>
     </div>
   </td>
-  <td class="px-4 py-3 text-sm"><%= number_to_human_size(import.file&.byte_size) || 'N/A' %></td>
+  <td class="px-4 py-3 text-sm"><%= human_file_size(import.file&.byte_size) || 'N/A' %></td>
   <td class="px-4 py-3 text-right tabular-nums font-medium" data-points-count>
     <%= number_with_delimiter import.processed %>
     <% if import.doubles.to_i.positive? %>

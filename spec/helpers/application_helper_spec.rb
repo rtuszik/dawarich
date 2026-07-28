@@ -600,6 +600,28 @@ RSpec.describe ApplicationHelper, type: :helper do
     end
   end
 
+  describe '#human_file_size' do
+    it 'uses decimal units so 17.3 million bytes reads as 17.3 MB, not 16.5' do
+      expect(helper.human_file_size(17_300_000)).to eq('17.3 MB')
+    end
+
+    it 'formats kilobytes' do
+      expect(helper.human_file_size(1_500)).to eq('1.5 KB')
+    end
+
+    it 'formats gigabytes' do
+      expect(helper.human_file_size(2_400_000_000)).to eq('2.4 GB')
+    end
+
+    it 'formats plain bytes' do
+      expect(helper.human_file_size(500)).to eq('500 B')
+    end
+
+    it 'returns nil for nil so views can fall back to N/A' do
+      expect(helper.human_file_size(nil)).to be_nil
+    end
+  end
+
   describe '#preferred_map_path' do
     context 'when user is not signed in' do
       before do
