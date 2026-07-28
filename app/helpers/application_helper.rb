@@ -235,6 +235,14 @@ module ApplicationHelper
     end
   end
 
+  # Decimal (SI) units, matching what OS file managers show,
+  # number_to_human_size divides by 1024 but labels the result "MB".
+  def human_file_size(bytes)
+    return if bytes.blank?
+
+    number_to_human(bytes, units: { unit: 'B', thousand: 'KB', million: 'MB', billion: 'GB', trillion: 'TB' })
+  end
+
   def sortable_column(title, column, path_helper, **path_params)
     current_sort = params[:sort_by] || 'created_at'
     current_dir  = params[:order_by] || 'desc'
